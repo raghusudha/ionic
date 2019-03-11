@@ -16,12 +16,12 @@ export class CustomerComponent implements OnInit {
   constructor(private router: Router) {
   	this.items.push({
   		title: 'List',
-        note:'/list-customer',
+        note:'/listcustomer',
         icon: this.icons[0]
   	});
   	this.items.push({
   		title: 'Add',
-  		note:'/add-customer',
+  		note:'/addcustomer',
       icon: this.icons[1]
   	});
   }

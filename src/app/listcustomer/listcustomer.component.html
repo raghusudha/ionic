@@ -1,3 +1,7 @@
-<p>
-  listcustomer works!
-</p>
+<ion-cart *ngFor="let c of list">
+  <li>
+    {{c.id}} | {{c.name}} | {{c.email}} |{{c.phone}} | {{c.address}}
+  </li>    
+  <!-- <input type="button" (click)="deleteStudent(s.id)" value="Delete student">
+  <input type="button" (click)="selectStudent(s)" value="Select student"> -->
+</ul>
