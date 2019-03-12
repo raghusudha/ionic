@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import  CustomerService  from '../customer.service';
+import { routerNgProbeToken } from '@angular/router/src/router_module';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-listcustomer',
@@ -7,13 +9,21 @@ import  CustomerService  from '../customer.service';
   styleUrls: ['./listcustomer.component.scss'],
 })
 export class ListcustomerComponent implements OnInit {
-  list=[];
+  list:any=[];
  
-  constructor(private customerService:CustomerService) {   
+  constructor(private customerService:CustomerService, private router:Router) {   
+    
      }
 
   ngOnInit() {
     this.list=this.customerService.getCustomers();
+   
+  }
+  onEdit(id){
+      this.router.navigate(['/editcustomer/'+id])
+  }
+  deleteCustomers(id){
+    this.list=this.customerService.deleteCustomers(id);
   }
   
 }

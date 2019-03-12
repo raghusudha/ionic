@@ -16,11 +16,13 @@ import { CustomerComponent } from './customer/customer.component';
 import { AddcustomerComponent } from './addcustomer/addcustomer.component';
 import { ListcustomerComponent } from './listcustomer/listcustomer.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { EditcustomerComponent } from './editcustomer/editcustomer.component';
 import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [AppComponent,LoginComponent,DashboardComponent,CustomerComponent,
-    HomeComponent,LogoutComponent,AboutComponent,AddcustomerComponent,ListcustomerComponent],
+    HomeComponent,LogoutComponent,AboutComponent,AddcustomerComponent,ListcustomerComponent,
+    EditcustomerComponent],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,FormsModule],
   providers: [

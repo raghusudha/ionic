@@ -7,6 +7,7 @@ import { AboutComponent } from './about/about.component';
 import { AddcustomerComponent } from './addcustomer/addcustomer.component';
 import { ListcustomerComponent } from './listcustomer/listcustomer.component';
 import { LogoutComponent } from './logout/logout.component';
+import { EditcustomerComponent } from './editcustomer/editcustomer.component';
 import { CustomerComponent } from './customer/customer.component';
 const routes: Routes = [
   {path:'login',component:LoginComponent},
@@ -17,6 +18,7 @@ const routes: Routes = [
   {path:'addcustomer',component:AddcustomerComponent},
   {path:'listcustomer',component:ListcustomerComponent},
   {path:'dashboard',component:DashboardComponent},
+  {path:'editcustomer/:id',component:EditcustomerComponent},
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'home', loadChildren: './home/home.module#HomePageModule' },
 ];

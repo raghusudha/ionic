@@ -1,7 +1,25 @@
-<ion-cart *ngFor="let c of list">
-  <li>
-    {{c.id}} | {{c.name}} | {{c.email}} |{{c.phone}} | {{c.address}}
-  </li>    
-  <!-- <input type="button" (click)="deleteStudent(s.id)" value="Delete student">
-  <input type="button" (click)="selectStudent(s)" value="Select student"> -->
-</ul>
+<ion-header>
+    <ion-menu-button></ion-menu-button>
+    <ion-title>List of Customesrs</ion-title>
+</ion-header>
+
+<ion-content>
+<ion-card  *ngFor="let c of list">
+ <ion-card-header>
+  
+  <ion-card-title><ion-icon name="contact"></ion-icon>{{ c.id }} {{ c.name }}
+    <ion-icon name="create"(click)="onEdit(c.id)"></ion-icon>
+    <ion-icon  name="trash" color="danger" (click)="deleteCustomers(c.id)"></ion-icon>
+  </ion-card-title> <br>
+  
+
+
+        <ion-icon name="mail"></ion-icon>  {{ c.email }} <br>
+        <ion-icon name="phone-portrait"></ion-icon>{{ c.phone }} <br> 
+        <ion-icon name="pin"></ion-icon>{{ c.address }}
+      </ion-card-header>
+  </ion-card>
+</ion-content>
+ 
+ 
+

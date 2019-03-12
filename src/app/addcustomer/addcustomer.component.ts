@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import  CustomerService  from '../customer.service';
 
 @Component({
   selector: 'app-addcustomer',
@@ -6,9 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./addcustomer.component.scss'],
 })
 export class AddcustomerComponent implements OnInit {
-
-  constructor() { }
+  customers={id:'',name:"",email:"" ,phone:'',address:''}
+  constructor(private customerService:CustomerService) { }
 
   ngOnInit() {}
-
+  addCustomer(){
+    this.customerService.addCustomer(this.customers);
+}
 }

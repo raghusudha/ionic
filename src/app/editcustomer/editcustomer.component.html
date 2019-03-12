@@ -1,0 +1,25 @@
+<ion-header>
+    <ion-menu-button></ion-menu-button>
+    <ion-title>Update Customer</ion-title>
+</ion-header>
+<ion-content>
+    <ion-item>
+        <ion-input placeholder="enter name" [(ngModel)]=customer.id></ion-input>
+      </ion-item>
+    <ion-item>
+      <ion-input placeholder="enter name" [(ngModel)]=customer.name></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input placeholder="enter email" [(ngModel)]=customer.email></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input  placeholder="enter phone" [(ngModel)]=customer.phone></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input   placeholder="enter address" [(ngModel)]=customer.address></ion-input>
+    </ion-item>
+    
+      <ion-button  (click)="update()">Update Customer  </ion-button>
+    
+    
+    </ion-content>
