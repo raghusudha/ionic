@@ -25,5 +25,7 @@ export class ListcustomerComponent implements OnInit {
   deleteCustomers(id){
     this.list=this.customerService.deleteCustomers(id);
   }
-  
+  deleteAllCustomers(){
+    this.customerService.deleteAllCustomers();
+  }
 }

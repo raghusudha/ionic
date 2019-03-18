@@ -8,8 +8,13 @@ export default class CustomerService {
   {id:2,name:"Raghu",email:"raghu@gmail.com" ,phone:'345678',address:'Btm'},
   {id:3,name:"Pavi",email:"pavi@gmail.com" ,phone:'345678',address:'Btm'}];
 
+
   constructor() { }
+  customer=JSON.parse(localStorage.getItem('customers'));
  getCustomers(){
+   if(localStorage.getItem('customers').length!=null){
+     this.customers=JSON.parse(localStorage.getItem('customers'));
+   }
    return this.customers;
  }
  deleteCustomers(id){
@@ -21,6 +26,10 @@ export default class CustomerService {
   }
   return this.customers=list;
  }
+ deleteAllCustomers(){
+   this.customers.length=0;
+   localStorage.setItem('customers', JSON.stringify(this.customers));
+ }
  getCustomerById(id){
    for(var i=0;i<this.customers.length;i++){
   if(this.customers[i].id==id){
@@ -30,32 +39,21 @@ export default class CustomerService {
    }
   
  }
- addUpdateCustomer(customer){
-   var update=false;
-   for(var i=0;i<this.customers.length;i++){
-     if(customer.id==this.customers[i].id){
-       update=true;
-       this.customers[i]=customer;
-       break;
 
-     }
-
-   }
-   if(update){
-    customer.id=Math.round(Math.random()*10000);
-    this.customers.push(customer);
-   }
- }
+ 
  addCustomer(customer){
-    
-   this.customers.push(customer);
+  customer.id=Math.round(Math.random()*10000);
+  this.customers.push(customer);
+  localStorage.setItem('customers', JSON.stringify(this.customers));
  }
  updateCustomer(customer){
   for(var i=0;i<this.customers.length;i++){
-    if(this.customers[i].id==customer.id){
+    if(customer.id==this.customers[i].id){
       this.customers[i]=customer;
+      break;
     }
     
   }
+  localStorage.setItem('customers', JSON.stringify(this.customers));
  }
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import  CustomerService  from '../customer.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-addcustomer',
@@ -8,10 +9,12 @@ import  CustomerService  from '../customer.service';
 })
 export class AddcustomerComponent implements OnInit {
   customers={id:'',name:"",email:"" ,phone:'',address:''}
-  constructor(private customerService:CustomerService) { }
+  constructor(private router: Router,private customerService:CustomerService) { }
 
   ngOnInit() {}
   addCustomer(){
     this.customerService.addCustomer(this.customers);
+    this.router.navigate(['./listcustomer']);
+
 }
 }
