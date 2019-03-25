@@ -16,14 +16,19 @@ export class ListcustomerComponent implements OnInit {
      }
 
   ngOnInit() {
+    this.customerService.getRemoteCustomers().subscribe((result) => {this.list = result;});
+  	this.list = this.customerService.getCustomers();
     this.list=this.customerService.getCustomers();
    
   }
   onEdit(id){
       this.router.navigate(['/editcustomer/'+id])
   }
-  deleteCustomers(id){
-    this.list=this.customerService.deleteCustomers(id);
+  deleteCustomer(customer){
+    this.customerService.deleteRemoteCustomer(customer).subscribe((e) => {
+      this.customerService.getRemoteCustomers().subscribe((result) => {this.list = result;});
+    });
+   this.list = this.customerService.getCustomers();
   }
   deleteAllCustomers(){
     this.customerService.deleteAllCustomers();

@@ -5,22 +5,22 @@
 
 <ion-content>
 <ion-item>
-  <ion-input   placeholder="enter id" [(ngModel)]=customers.id></ion-input>
+  <ion-input   placeholder="enter id" [(ngModel)]="customer.id"></ion-input>
 </ion-item>
 <ion-item>
-  <ion-input placeholder="enter name" [(ngModel)]=customers.name></ion-input>
+  <ion-input placeholder="enter name" [(ngModel)]="customer.name"></ion-input>
 </ion-item>
 <ion-item>
-  <ion-input placeholder="enter email" [(ngModel)]=customers.email></ion-input>
+  <ion-input placeholder="enter email" [(ngModel)]="customer.email"></ion-input>
 </ion-item>
 <ion-item>
-  <ion-input  placeholder="enter phone" [(ngModel)]=customers.phone></ion-input>
+  <ion-input  placeholder="enter phone" [(ngModel)]="customer.phone"></ion-input>
 </ion-item>
 <ion-item>
-  <ion-input   placeholder="enter address" [(ngModel)]=customers.address></ion-input>
+  <ion-input   placeholder="enter address" [(ngModel)]="customer.address"></ion-input>
 </ion-item>
 
-  <ion-button  (click)="addCustomer()">Add Customer  </ion-button>
+  <ion-button  (click)="addCustomer(customer)">Add Customer  </ion-button>
 
 
 </ion-content>

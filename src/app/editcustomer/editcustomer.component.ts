@@ -15,20 +15,23 @@ export class EditcustomerComponent implements OnInit {
   private sub: any;
   customer:any ={};
   ngOnInit() {
+    this.customer = {name:'', email:'', phone:'', address:''};
   	 this.sub = this.route.params.subscribe(params => {
        this.id = +params['id']; // (+) converts string 'id' to a number
-       console.log("id is "+this.id);
-       this.customer = this.customerService.getCustomerById(this.id);
-      //  console.log(JSON.stringify(this.customer));
-       // In a real app: dispatch action to load the details here.
+       this.customerService.getRemoteCustomerById(this.id).subscribe((customer)=>{this.customer = customer;});
     });
+  }
+
+  updateCustomer(customer){
+    this.customerService.updateRemoteCustomer(customer).subscribe(()=>{this.router.navigate(['/listcustomer']);});
+  }
    
 
-    }
+    
    
-    updateCustomer(customer){
-      this.customerService.updateCustomer(customer);
-      this.router.navigate(['./listcustomer']);
-    }
+    // updateCustomer(customer){
+    //   this.customerService.updateCustomer(customer);
+    //   this.router.navigate(['./listcustomer']);
+    // }
   }
 

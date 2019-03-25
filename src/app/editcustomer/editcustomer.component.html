@@ -4,19 +4,19 @@
 </ion-header>
 <ion-content>
     <ion-item>
-        <ion-input placeholder="enter name" [(ngModel)]=customer.id></ion-input>
+        <ion-input placeholder="enter name" [(ngModel)]="customer.id"></ion-input>
       </ion-item>
     <ion-item>
-      <ion-input placeholder="enter name" [(ngModel)]=customer.name></ion-input>
+      <ion-input placeholder="enter name" [(ngModel)]="customer.name"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-input placeholder="enter email" [(ngModel)]=customer.email></ion-input>
+      <ion-input placeholder="enter email" [(ngModel)]="customer.email"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-input  placeholder="enter phone" [(ngModel)]=customer.phone></ion-input>
+      <ion-input  placeholder="enter phone" [(ngModel)]="customer.phone"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-input   placeholder="enter address" [(ngModel)]=customer.address></ion-input>
+      <ion-input   placeholder="enter address" [(ngModel)]="customer.address"></ion-input>
     </ion-item>
     
       <ion-button  (click)="updateCustomer(customer)">Update Customer  </ion-button>

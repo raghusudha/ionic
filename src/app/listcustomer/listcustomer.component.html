@@ -4,19 +4,19 @@
 </ion-header>
 
 <ion-content>
-<ion-card  *ngFor="let c of list">
+<ion-card  *ngFor="let customer of list">
  <ion-card-header>
   
-  <ion-card-title><ion-icon name="contact"></ion-icon>{{ c.id }} {{ c.name }}
-    <ion-icon name="create"(click)="onEdit(c.id)"></ion-icon>
-    <ion-icon  name="trash" color="danger" (click)="deleteCustomers(c.id)"></ion-icon>
+  <ion-card-title><ion-icon name="contact"></ion-icon>{{ customer.id }} {{ customer.name }}
+    <ion-icon name="create"(click)="onEdit(customer.id)"></ion-icon>
+    <ion-icon  name="trash" color="danger" (click)="deleteCustomer(customer)"></ion-icon>
   </ion-card-title> <br>
   
 
 
-        <ion-icon name="mail"></ion-icon>  {{ c.email }} <br>
-        <ion-icon name="phone-portrait"></ion-icon>{{ c.phone }} <br> 
-        <ion-icon name="pin"></ion-icon>{{ c.address }}
+        <ion-icon name="mail"></ion-icon>  {{ customer.email }} <br>
+        <ion-icon name="phone-portrait"></ion-icon>{{ customer.phone }} <br> 
+        <ion-icon name="pin"></ion-icon>{{ customer.address }}
       </ion-card-header>
   </ion-card>
   <ion-button (click)="deleteAllCustomers()">Delete All Customers</ion-button>

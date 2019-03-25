@@ -8,13 +8,13 @@ import { Router } from '@angular/router';
   styleUrls: ['./addcustomer.component.scss'],
 })
 export class AddcustomerComponent implements OnInit {
-  customers={id:'',name:"",email:"" ,phone:'',address:''}
+  customer={}
   constructor(private router: Router,private customerService:CustomerService) { }
 
   ngOnInit() {}
-  addCustomer(){
-    this.customerService.addCustomer(this.customers);
-    this.router.navigate(['./listcustomer']);
-
-}
+  addCustomer(customer){
+  	this.customerService.addRemoteCustomer(customer).subscribe(()=>{this.router.navigate(['/listcustomer']);});
+  
+  
+  }
 }
