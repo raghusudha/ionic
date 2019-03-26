@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import  CustomerService  from '../customer.service';
 import { routerNgProbeToken } from '@angular/router/src/router_module';
-import { Router } from '@angular/router';
+import { Router,NavigationEnd } from '@angular/router';
 
 @Component({
   selector: 'app-listcustomer',
@@ -12,8 +12,18 @@ export class ListcustomerComponent implements OnInit {
   list:any=[];
  
   constructor(private customerService:CustomerService, private router:Router) {   
+    this.routeEvent(this.router);
+  }
+  routeEvent(router: Router){
+    router.events.subscribe(e => {
+      if(e instanceof NavigationEnd){
+        console.log(e)
+        if(e.urlAfterRedirects == '/listcustomer'){
     
      }
+    }
+  });
+}
 
   ngOnInit() {
     this.customerService.getRemoteCustomers().subscribe((result) => {this.list = result;});
